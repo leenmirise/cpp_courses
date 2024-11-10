@@ -23,7 +23,7 @@ target_include_directories(c___courses
 )
 set_target_properties(test_version PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
-    INCLUDE_DIRECTIONS ${Boost_INCLUDE_DIR}
+    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
 target_link_libraries(c___courses_cli PRIVATE
