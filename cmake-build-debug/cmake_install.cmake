@@ -33,7 +33,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/LeenM/CLionProjects/c++_courses/cmake-build-debug/c___courses_cli.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/LeenM/CLionProjects/c++_courses/cmake-build-debug/ip_filter_cli.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
