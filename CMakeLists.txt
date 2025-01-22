@@ -5,6 +5,8 @@ set(PROJECT_VERSION 0.1.${PATCH_VERSION})
 
 project(ip_filter VERSION ${PROJECT_VERSION})
 
+option(WITH_BOOST_TEST "Whether to build Boost test" ON)
+
 add_executable(ip_filter_cli ip_filter.cpp)
 
 set_target_properties(ip_filter_cli PROPERTIES

@@ -7,7 +7,7 @@ using Vec = std::vector<std::vector<std::string> > ;
 
 bool compare(const std::vector<std::string>& left, const std::vector<std::string>& right)
 {
-    for(int i = 0; i < size(left); i++){
+    for(size_t i = 0; i < size(left); i++){
         if (left[i] > right[i]) return true;
     }
     return false;
