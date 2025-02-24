@@ -8,7 +8,8 @@ using Vec = std::vector<std::vector<std::string> > ;
 bool compare(const std::vector<std::string>& left, const std::vector<std::string>& right)
 {
     for(size_t i = 0; i < size(left); i++){
-        if (left[i] > right[i]) return true;
+        if (std::stoi(left[i]) == std::stoi(right[i])) {continue;}
+        return std::stoi(left[i]) > std::stoi(right[i]);
     }
     return false;
 }
