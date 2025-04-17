@@ -1,21 +1,25 @@
 name: Doxygen Docs
 on:
   push:
-    branches:
-      - master
-      - feature_sfinae
-      - feature/github_actions
+    branches: [ feature_sfinae ]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Doxygen
-        run: sudo apt-get install doxygen graphviz
-      - name: Generate Doxygen
-        run: doxygen Doxyfile
-      - name: Deploy to GitHub Pages
+
+      - name: Doxygen Action
+        uses: mattnotmitt/doxygen-action@v1.1.0
+        with:
+          doxyfile-path: ./Doxyfile
+          working-directory: .
+
+      - name: GH Pages Deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html
+          publish_dir: .html/
+          enable_jekyll: false
+          allow_empty_commit: false
+          force_orphan: true
+          publish_branch: gh-pages
