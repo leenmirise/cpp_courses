@@ -9,10 +9,10 @@ option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 
 add_executable(editor_cli
         main.cpp
-        View.cpp
-        Model.cpp
-        Controller.cpp
-        Document.cpp)
+        view.cpp
+        model.cpp
+        controller.cpp
+        document.cpp)
 target_include_directories(editor_cli PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
