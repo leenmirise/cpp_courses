@@ -7,25 +7,32 @@ project(allocator VERSION ${PROJECT_VERSION})
 
 option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 
-add_executable(allocator_cli allocator.cpp)
-
-set_target_properties(allocator_cli PROPERTIES
+add_executable(editor_cli
+        main.cpp
+        View.cpp
+        Model.cpp
+        Controller.cpp
+        Document.cpp)
+target_include_directories(editor_cli PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+set_target_properties(editor_cli PROPERTIES
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
 )
 
-target_include_directories(allocator_cli
+target_include_directories(editor_cli
         PRIVATE "${CMAKE_BINARY_DIR}"
 )
 
 
 if (MSVC)
-    target_compile_options(allocator_cli PRIVATE /W4)
+    target_compile_options(editor_cli PRIVATE /W4)
 else()
-    target_compile_options(allocator_cli PRIVATE -Wall -Wextra -pedantic)
+    target_compile_options(editor_cli PRIVATE -Wall -pedantic)
 endif()
 
-install(TARGETS allocator_cli RUNTIME DESTINATION bin)
+install(TARGETS editor_cli RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
